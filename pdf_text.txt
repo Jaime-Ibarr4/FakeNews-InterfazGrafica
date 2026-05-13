@@ -1,0 +1,670 @@
+ 
+UNIVERSIDAD AUTÓNOMA DE CHIAPAS 
+FACULTAD DE CONTADURÍA Y 
+ADMINISTRACIÓN C – I 
+LICENCIATURA EN INGENIERÍA EN DESARROLLO 
+Y TECNOLOGÍAS DE SOFTWARE 
+  
+ 
+INTELIGENCIA ARTIFICIAL 
+  
+ 
+SISTEMA INTELIGENTE DE CLASIFICACIÓN DE NOTICIAS 
+FALSAS (FAKE NEWS LOCAL) 
+ 
+ DANNA AUDELIA GOMEZ CANUL       100012460 
+MARIA FERNANDA CRUZ CORDOVA       100008008 
+JAZMIN SANTIAGO ALEGRIA        A200783 
+JAIME ALEXIS IBARRA VELAZQUEZ       100010498 
+ 
+7°M 
+ 
+DANIEL GONZALEZ SCARPULLI 
+  
+ 
+TUXTLA GUTIERREZ, CHIAPAS 
+24/02/2026 
+1 
+
+---PAGE---
+ 
+ÍNDICE  
+ 
+ 
+INTRODUCCIÓN. 3 
+PROBLEMÁTICA Y CONTEXTO. 4 
+DEFINICIÓN DE FAKE NEWS. 4 
+Impacto social, político y cultural de la desinformación. 4 
+Ejemplos de casos locales en México y Chiapas. 5 
+1-. Gasolinazo 2025 5 
+2.- Quiebra de mexicana de aviación 6 
+Síntomas: 6 
+Objetivo: 7 
+DIAGNÓSTICO Y FUNDAMENTOS HEURÍSTICOS. 8 
+1. Explicación de Heurísticas 8 
+2. Métodos de Diagnóstico Heurístico 8 
+3. Ejemplos de Heurísticas Aplicadas 9 
+4. Relación con los Métodos de Representación del Conocimiento 9 
+DISEÑO DEL SISTEMA INTELIGENTE DE CLASIFICACIÓN DE NOTICIAS FALSAS. 10 
+ARQUITECTURA GENERAL DEL SISTEMA 10 
+1. Entrada (Input: Noticias) 10 
+2. Procesamiento (Análisis heurístico y técnico) 11 
+3. Salida (Clasificación) 12 
+USO DE HEURÍSTICAS Y REPRESENTACIÓN DEL CONOCIMIENTO 13 
+Ejemplo práctico: 13 
+REPRESENTACIÓN DEL CONOCIMIENTO Y CIERRE DEL TRABAJO 15 
+MÉTODOS DE REPRESENTACIÓN APLICADOS 15 
+A. Árboles de Decisión 15 
+B. Reglas de Producción 15 
+C. Tablas heurísticas. 15 
+Ejemplo de representación visual. 16 
+CONCLUSIONES. 17 
+REFERENCIAS 18 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2 
+---PAGE---
+ 
+INTRODUCCIÓN. 
+ 
+ Las noticias falsas se han convertido en un problema constante en la vida 
+diaria. A través de redes sociales y medios digitales circula información que muchas 
+veces no está verificada y que puede generar miedo, confusión o desconfianza en la 
+sociedad. En lugares como Chiapas y México en general, este tipo de contenidos ha 
+afectado la percepción de la gente sobre temas sociales, políticos y económicos. 
+Frente a esta situación, es necesario contar con herramientas que ayuden a 
+identificar y clasificar las noticias falsas antes de que se difundan masivamente. Un 
+sistema inteligente basado en heurísticas y en métodos de representación del 
+conocimiento puede analizar el lenguaje, la fuente y el estilo de las noticias para 
+determinar si son confiables o no. De esta manera, se busca apoyar a los usuarios 
+en la detección temprana de información engañosa y fortalecer su capacidad de 
+reconocer contenidos verídicos. 
+Este trabajo presenta la investigación sobre la problemática de las noticias falsas en 
+el ámbito local, explica cómo se pueden diagnosticar mediante reglas heurísticas y 
+propone una arquitectura de sistema que permita clasificarlas. Con ello, se pretende 
+aportar una solución práctica que contribuya a reducir el impacto de la 
+desinformación y mejorar el acceso a información confiable en la comunidad. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+3 
+---PAGE---
+ 
+PROBLEMÁTICA Y CONTEXTO. 
+ 
+DEFINICIÓN DE FAKE NEWS. 
+ 
+Las noticias falsas son contenidos creados o manipulados con la intención de 
+engañar o confundir a la opinión pública, distinguiéndose entre desinformación y 
+misinformación (Animal Político – El Sabueso, 2025). 
+ 
+ 
+Impacto social, político y cultural de la desinformación. 
+La desinformación tiene un impacto significativo en distintos ámbitos de la 
+sociedad, ya que influye en la manera en que las personas perciben la realidad y 
+toman decisiones. En el ámbito social, la difusión de información falsa puede 
+generar confusión, miedo y conflictos entre grupos sociales, además de afectar la 
+confianza en los medios de comunicación y en las fuentes oficiales de información. 
+Asimismo, contribuye a la propagación de estereotipos y prejuicios que pueden 
+perjudicar a comunidades vulnerables. 
+En el aspecto político, la desinformación puede ser utilizada como una 
+herramienta para manipular la opinión pública, influir en procesos electorales y 
+desacreditar a figuras o instituciones, lo que debilita la democracia y dificulta la toma 
+de decisiones informadas por parte de la ciudadanía. La circulación masiva de 
+noticias falsas durante contextos electorales o situaciones de crisis incrementa la 
+polarización social y la desconfianza hacia las autoridades. 
+Por otro lado, en el ámbito cultural, la desinformación afecta la construcción 
+del conocimiento colectivo y modifica las creencias sociales al difundir ideas 
+erróneas que pueden normalizarse con el tiempo. Esto impacta la forma en que las 
+personas interpretan acontecimientos históricos, científicos y sociales, limitando el 
+pensamiento crítico y favoreciendo la difusión continua de información incorrecta 
+(Animal Político – El Sabueso, 2025). 
+ 
+ 
+4 
+---PAGE---
+ 
+Ejemplos de casos locales en México y Chiapas. 
+1-. Gasolinazo 2025 
+ 
+Un ejemplo claro del impacto de la desinformación en la sociedad mexicana 
+es la difusión de información falsa relacionada con un supuesto “gasolinazo” en 
+2025. En redes sociales y algunos medios se afirmó que el incremento en el 
+impuesto especial provocaría un aumento significativo en el precio de la gasolina. 
+Sin embargo, autoridades y organismos oficiales aclararon que no existía tal 
+aumento y que el precio del combustible incluso había mostrado una disminución en 
+términos reales. Este tipo de desinformación generó preocupación e incertidumbre 
+entre la población, demostrando cómo las noticias falsas pueden influir en la 
+percepción económica y provocar reacciones sociales basadas en información 
+incorrecta. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+5 
+
+---PAGE---
+ 
+2.- Quiebra de mexicana de aviación 
+ 
+ 
+Otro caso relevante fue la difusión de la supuesta quiebra de Mexicana de 
+Aviación, donde se aseguró que la aerolínea enfrentaba una crisis de pasajeros y 
+operaciones fallidas. No obstante, datos oficiales indicaron que la empresa había 
+transportado miles de pasajeros durante 2024 y mantenía un crecimiento progresivo 
+en sus operaciones. Este ejemplo evidencia cómo la desinformación puede afectar 
+la imagen pública de instituciones y empresas, además de influir en la opinión 
+política y económica de la ciudadanía al crear percepciones negativas sin sustento 
+real. 
+Ambos casos muestran que la desinformación no solo transmite datos 
+incorrectos, sino que también puede generar miedo, desconfianza y polarización 
+social, afectando la interpretación de la realidad y la toma de decisiones informadas 
+por parte de la población. 
+ 
+Síntomas: 
+En la actualidad, el crecimiento acelerado de las redes sociales y plataformas 
+digitales ha facilitado la difusión masiva de información sin procesos adecuados de 
+verificación. Esto ha provocado una proliferación constante de noticias falsas o 
+información no confirmada que se comparte rápidamente entre los usuarios. Como 
+consecuencia, se genera confusión social, ya que muchas personas tienen 
+dificultades para diferenciar entre contenido verídico y desinformación. Además, 
+esta situación contribuye a la propagación de rumores, interpretaciones erróneas de 
+acontecimientos y manipulación de la opinión pública. Con el tiempo, estos factores 
+han ocasionado una notable pérdida de confianza en los medios de comunicación 
+tradicionales, instituciones informativas e incluso en fuentes oficiales, afectando la 
+manera en que la sociedad consume y percibe la información. 
+ 
+ 
+6 
+
+---PAGE---
+ 
+Objetivo: 
+El objetivo principal es justificar la necesidad de desarrollar un sistema 
+inteligente capaz de analizar, identificar y clasificar noticias falsas mediante el uso 
+de tecnologías avanzadas, como la inteligencia artificial y el procesamiento 
+automático del lenguaje natural. Este sistema permitiría evaluar la veracidad del 
+contenido informativo antes de que sea difundido ampliamente, ayudando a los 
+usuarios a reconocer información confiable y reducir el impacto de la 
+desinformación. Asimismo, contribuiría a fortalecer el pensamiento crítico de los 
+usuarios, mejorar la calidad del ecosistema digital y apoyar a medios de 
+comunicación, instituciones educativas y plataformas tecnológicas en la detección 
+temprana de contenido engañoso, promoviendo así un acceso más seguro y 
+responsable a la información. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+7 
+---PAGE---
+ 
+DIAGNÓSTICO Y FUNDAMENTOS HEURÍSTICOS. 
+1. Explicación de Heurísticas 
+Las heurísticas son estrategias cognitivas o reglas prácticas que permiten 
+tomar decisiones de manera rápida cuando no se dispone de información completa 
+o cuando el tiempo para analizar una situación es limitado. En el ámbito de la 
+psicología cognitiva, las heurísticas se entienden como atajos mentales que 
+simplifican procesos complejos de razonamiento. Aunque no garantizan una 
+solución perfecta, permiten obtener resultados suficientemente adecuados en 
+contextos reales. 
+En el campo de la Inteligencia Artificial, las heurísticas se utilizan como 
+métodos de búsqueda o criterios de evaluación que orientan al sistema hacia una 
+solución probable sin necesidad de explorar todas las posibilidades. A diferencia de 
+un algoritmo exacto, que sigue pasos definidos para llegar a un resultado 
+determinístico, un enfoque heurístico prioriza eficiencia y rapidez sobre 
+exhaustividad (Russell & Norvig, 2021). 
+Aplicado al problema de las noticias falsas, un sistema heurístico no intenta 
+verificar cada dato con una base de datos universal sino que evalúa indicadores 
+clave que suelen estar asociados con la desinformación. Estos indicadores 
+funcionan como señales de alerta. 
+ 
+ 
+ 
+ 
+Por ejemplo: 
+● Lenguaje emocional excesivo. 
+● Uso de palabras extremas o alarmistas. 
+● Falta de autor identificable. 
+● Ausencia de fuentes verificables. 
+● Publicación inicial en redes sociales sin respaldo de medios oficiales. 
+Estas señales no prueban automáticamente que una noticia sea falsa, sin embargo 
+aumentan el nivel de sospecha. El sistema, por tanto, asigna un “peso heurístico” a 
+cada indicador detectado y toma una decisión basada en la acumulación de 
+evidencias. 
+8 
+---PAGE---
+ 
+2. Métodos de Diagnóstico Heurístico 
+El diagnóstico de una noticia se realiza a través de tres ejes principales de análisis: 
+● Análisis del Lenguaje: Se examina el estilo de redacción para detectar 
+lenguaje alarmista, uso excesivo de signos de admiración o palabras que 
+apelan a las emociones del lector. 
+● Evaluación de Fuentes: Se verifica la procedencia de la información, 
+distinguiendo entre medios oficiales, autores reconocidos y publicaciones en 
+redes sociales de origen dudoso. 
+● Patrones de Publicación: Se analizan metadatos como la hora de 
+publicación y la consistencia de la noticia con otros reportes en medios de 
+comunicación verificados. 
+ 
+3. Ejemplos de Heurísticas Aplicadas 
+Para que el sistema clasifique una noticia, se implementan reglas específicas 
+basadas en la observación de casos locales (como el "Gasolinazo 2025" o 
+"Jiquipilas"): 
+● Heurística de Verificabilidad: Si la fuente no es verificable o no tiene autor 
+claro entonces la noticia es sospechosa. 
+● Heurística de Sensacionalismo: Si el título contiene palabras extremas por 
+ejemplo: ¡Increíble! o ¡Atención!, es una posible fake news. 
+● Heurística de Consistencia: Si el contenido contradice datos de fuentes 
+oficiales o medios reconocidos siendo así la noticia es probablemente falsa. 
+ 
+4. Relación con los Métodos de Representación del Conocimiento 
+El diagnóstico heurístico se formaliza dentro del sistema mediante los siguientes 
+métodos vistos en clase: 
+1. Reglas de Producción: El conocimiento se estructura en formato si 
+(Condición) -> ENTONCES (Acción). Por ejemplo: Si la fuente es "Redes 
+Sociales" Y el contenido es "Alarmista" -> Clasificación = "Sospechosa". 
+2. Árboles de Decisión: Permiten visualizar el flujo de descarte de noticias. El 
+sistema comienza preguntando por la fuente; si esta falla, pasa a evaluar el 
+lenguaje y finalmente la consistencia local. 
+3. Tablas Heurísticas: Se asignan "pesos de sospecha" a cada síntoma 
+detectado. Por ejemplo, la falta de autor otorga más 2 puntos de sospecha, 
+mientras que el uso de mayúsculas otorga más un punto. 
+ 
+9 
+---PAGE---
+ 
+DISEÑO DEL SISTEMA INTELIGENTE DE CLASIFICACIÓN DE NOTICIAS 
+FALSAS. 
+ARQUITECTURA GENERAL DEL SISTEMA 
+ 
+Entrada: noticia → procesamiento → salida: clasificación 
+ 
+Un Sistema Inteligente de Clasificación de Noticias Falsas  puede 
+representarse como un proceso de tres etapas principales:  
+ 
+1. Entrada (Input: Noticias) 
+El sistema recibe: 
+● Texto de la noticia (Titulo, Cuerpo, Fecha) 
+● Fuente (Medio, Autor, Enlace) 
+● Metadatos (Hora de publicación, Popularidad en redes) 
+ 
+“Hallazgo de dos cuerpos sin vida en la colonia Luis Espinosa En Jiquipilas 
+Chiapas 
+ 
+Ambas víctimas presentaban signos de violencia y aún se trabaja en su 
+identificación 
+ 
+Costa News/Redacción. 
+04 de diciembre de 2025.- 
+ 
+Autoridades municipales, estatales y federales investigan el hallazgo de un 
+hombre y una mujer sin vida en la colonia Luis Espinoza, donde pobladores 
+10 
+
+---PAGE---
+ 
+alertaron a los servicios de emergencia durante la mañana de este jueves. 
+Elementos de la policía local confirmaron el reporte y acordonaron la zona 
+para permitir el ingreso de peritos y agentes ministeriales. 
+ 
+El hombre presenta mutilaciones genitales, mientras que la mujer 
+mutilaciones de senos. Hasta el momento la identidad de los cuerpos no ha 
+sido confirmada. 
+ 
+La Fiscalía de Distrito Centro, informó que se abrió una carpeta de 
+investigación por el delito de homicidio calificado. Ambas víctimas 
+presentaban signos de violencia y aún se trabaja en su identificación. En 
+tanto, la zona fue resguardada mientras los peritos realizaban las diligencias 
+correspondientes para recabar indicios que permitan esclarecer el caso.” 
+ 
+-Consultar Noticia Falsa 
+ 
+ 
+ 
+ 
+Ver Noticia Completa 
+ 
+2. Procesamiento (Análisis heurístico y técnico) 
+Aquí ocurre la “inteligencia” del sistema. Se aplican heurísticas y métodos de 
+representación del conocimiento: 
+ 
+Procesamiento del texto:  
+ 
+● Limpieza de datos (Eliminar elementos que no aportan significado.) 
+○ Quitar caracteres especiales (#, %, $, !). 
+○ Eliminar espacios dobles o saltos de línea innecesarios. 
+11 
+
+---PAGE---
+ 
+○ Normalizar palabras: convertir todo a minúsculas para evitar 
+duplicados (“Gobierno” y “gobierno” se tratan igual). 
+    
+● Tokenización (Dividir el texto en palabras clave). 
+○ Ejemplo:   
+Texto: “Gobierno regalará autos a todos los ciudadanos”   
+Tokens: [“gobierno”, “regalará”, “autos”, “todos”, “ciudadanos”] 
+● Análisis de frecuencia de términos. ( Contar cuántas veces aparece 
+cada palabra en el texto.) 
+○ “Gobierno” → 1 vez 
+○ “autos” → 1 vez 
+○ “todos” → 1 vez 
+ 
+Aplicación de heurísticas: 
+ 
+● Regla 1: Si el título contiene palabras extremas (“¡Increíble!”, “Nunca 
+visto”) → sospechosa. 
+ 
+● Regla 2: Si la fuente no está verificada → sospechosa. 
+ 
+● Regla 3: Si el contenido contradice hechos comprobados → 
+sospechosa. 
+ 
+ Métodos de representación del conocimiento: 
+ 
+● Árboles de decisión (clasificar según reglas). 
+● Reglas de producción (SI condición → ENTONCES resultado). 
+● Redes semánticas (relaciones entre conceptos: noticia–fuente–tema). 
+ 
+3. Salida (Clasificación) 
+ 
+Resultado esperado: 
+● El sistema asigna una etiqueta a la noticia: 
+○ “Probablemente verdadera” 
+○ “Probablemente falsa” 
+○ “Necesita verificación adicional” 
+ 
+  Ejemplo:  
+● Entrada: “Gobierno regalará autos a todos los ciudadanos”. 
+ 
+● Procesamiento: Fuente desconocida + título sensacionalista + 
+contradicción con datos oficiales. 
+ 
+12 
+---PAGE---
+ 
+● Salida: Clasificación → “Probablemente falsa”. 
+ 
+USO DE HEURÍSTICAS Y REPRESENTACIÓN DEL CONOCIMIENTO  
+ 
+Ejemplo práctico: 
+ 
+1. Entrada  
+➔ El sistema recibe la noticia: 
+◆ Título: “Hallazgo de dos cuerpos sin vida en la colonia 
+Luis Espinosa en Jiquipilas Chiapas”. 
+◆ Cuerpo: Texto con detalles de supuestas mutilaciones y 
+participación de autoridades. 
+◆ Fuente: Página de Facebook y sitios poco confiables. 
+ 
+2. Procesamiento Heurístico  
+ 
+➔ Análisis de palabras clave: 
+◆ Palabras como “mutilaciones”, “violencia”, “ejecución” 
+son altamente sensacionalistas. 
+◆ La repetición de términos violentos sin respaldo oficial es 
+un indicador de sospecha. 
+ 
+➔ Análisis de la fuente: 
+◆ La noticia proviene de una publicación en Facebook y no 
+de un medio oficial reconocido. 
+◆ Al contrastar con fuentes confiables (ej. Diario de 
+Chiapas), se encuentra un desmentido oficial. 
+➔ Estilo del texto: 
+◆ Uso de detalles gráficos y lenguaje alarmista. 
+◆ Falta de datos verificables (no hay nombres, no hay 
+confirmación oficial). 
+ 
+3. Representación del conocimiento 
+➢ Reglas de producción (IF–THEN): 
+○ SI la fuente no es oficial → ENTONCES sospechosa. 
+○ SI el título contiene palabras sensacionalistas → 
+ENTONCES sospechosa. 
+○ SI no hay confirmación oficial → ENTONCES 
+sospechosa. 
+➢ Ontologías: 
+13 
+---PAGE---
+ 
+○ Definir conceptos y relaciones: Noticia → Fuente → 
+Veracidad. 
+○ Ejemplo: “Fuente oficial” está relacionada con “alta 
+credibilidad”; “Fuente en redes sociales” con “baja 
+credibilidad”. 
+➢ Redes semánticas: 
+○ Representar conexiones entre palabras clave: 
+mutilaciones → violencia → fake news. 
+○ Permite visualizar cómo ciertos términos se asocian con 
+patrones de noticias falsas. 
+4. Salida 
+El sistema clasifica la noticia como: 
+“Probablemente falsa”, porque cumple varias reglas heurísticas: 
+● Fuente no oficial. 
+● Lenguaje sensacionalista. 
+● Contradicción con medios confiables que desmintieron el hecho. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+14 
+---PAGE---
+ 
+REPRESENTACIÓN DEL CONOCIMIENTO Y CIERRE DEL TRABAJO 
+MÉTODOS DE REPRESENTACIÓN APLICADOS 
+ 
+Para que el sistema pueda clasificar una noticia como "verdadera" o "falsa", se han 
+implementado los siguientes modelos de representación: 
+ 
+A. Árboles de Decisión 
+ 
+Este método permite visualizar el flujo de decisiones lógicas basadas en los 
+atributos de la noticia. 
+ 
+● Nodo Raíz: ¿La fuente es un medio oficial o verificado? 
+● Nodo de Decisión 1 (Si es No): ¿El título utiliza lenguaje sensacionalista o 
+alarmista? 
+● Nodo de Decisión 2 (Si es Sí): ¿Existen datos oficiales que desmientan la 
+información? 
+● Hojas (Resultados): Clasificación final (Verdadera, Falsa, Necesita 
+Verificación). 
+ 
+B. Reglas de Producción 
+ 
+Se utiliza el paradigma SI (Condición) → ENTONCES (Acción) para definir el 
+comportamiento del motor de inferencia: 
+ 
+● R1: SI (Fuente == "Redes Sociales") Y (Contenido == "Alarmista") → 
+ENTONCES (Clasificación = "Sospechosa"). 
+● R2: SI (Confirmación_Oficial == FALSO) → ENTONCES (Clasificación = 
+"Probablemente Falsa"). 
+● R3: SI (Fuente == "Medio Reconocido") Y (Contradicción_Oficial == FALSO) 
+→ ENTONCES (Clasificación = "Probablemente Verdadera"). 
+ 
+C. Tablas heurísticas. 
+ 
+A continuación, se presenta la evaluación de pesos para los síntomas detectados en las 
+noticias locales analizadas: 
+ 
+ 
+15 
+---PAGE---
+ 
+Criterio Heurístico Indicador Peso de 
+Sospecha 
+Verificabilidad Sin autor o enlaces externos Alto 
++2 
+Estilo Lingüístico Uso de mayúsculas excesivas y 
+exclamaciones 
+Medio 
++1 
+Contexto Local Menciona lugares específicos sin 
+reportes policiales 
+Alto 
++1 
+Consistencia La noticia es desmentida por otros 
+medios 
+Crítico 
++2 
+ 
+Ejemplo de representación visual. 
+ 
+La relación entre los conceptos clave del sistema se puede representar mediante la 
+siguiente conexión semántica: 
+ 
+ 
+ 
+Esta red permite al sistema asociar términos como "mutilaciones" o "ejecución" con 
+un patrón de baja credibilidad cuando no están vinculados a una fuente oficial. 
+ 
+16 
+
+---PAGE---
+ 
+CONCLUSIONES. 
+ 
+A lo largo del desarrollo de este proyecto, se ha evidenciado que la proliferación de noticias 
+falsas en entornos digitales representa uno de los desafíos más críticos para la cohesión 
+social y la estabilidad informativa, especialmente en contextos locales como el estado de 
+Chiapas. La implementación de un sistema inteligente basado en métodos de 
+representación del conocimiento permite transformar la detección de desinformación de un 
+proceso meramente intuitivo a uno estructurado y computable. 
+ 
+Mediante la aplicación de reglas de producción y árboles de decisión, el sistema 
+logra identificar patrones lingüísticos y de origen que son característicos de la 
+desinformación, tales como el uso de lenguaje sensacionalista y la ausencia de 
+fuentes verificables. El análisis heurístico propuesto demuestra ser una herramienta 
+viable para mitigar el impacto de fenómenos como el "gasolinazo" o los falsos 
+reportes de violencia, los cuales suelen generar incertidumbre y miedo innecesario 
+en la población chiapaneca. 
+ 
+En conclusión, la integración de la inteligencia artificial y el procesamiento de 
+lenguaje natural no solo optimiza la clasificación de contenidos, sino que también 
+fortalece el pensamiento crítico del usuario al ofrecer un respaldo técnico sobre la 
+veracidad de la información. Este trabajo académico reafirma la necesidad de 
+continuar desarrollando tecnologías que se adapten a las particularidades culturales 
+y lingüísticas de nuestra región, promoviendo así un ecosistema digital más ético, 
+seguro y responsable para la ciudadanía. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+17 
+---PAGE---
+ 
+REFERENCIAS 
+1.- Animal Político – El Sabueso. (2025, July). ¿Cómo saber si una noticia es 
+falsa? Claves contra la desinformación [PDF]. Animal Político. 
+https://panel.animalpolitico.com/como-detectar-noticia-falsa/assets/manual_de_verifi
+cacion.pdf 
+2.- Capital 21. (2025, January 9). Estas fueron las mentiras difundidas al comienzo 
+del 2025 [Video]. YouTube. https://www.youtube.com/watch?v=DrQjyXUpSBE 
+ 
+3.- arXiv. (2023). Fake news detection tools and methods. arXiv preprint. 
+Recuperado de: [2307.12639] Detección de noticias falsas mediante redes 
+neuronales basadas en grafos: una encuesta 
+ 
+4.- Shu, K., Sliva, A., Wang, S., Tang, J., & Liu, H. (2017). Fake news detection on 
+social media: A data mining perspective. ACM SIGKDD Explorations Newsletter, 
+19(1), 22–36. Recuperado de: [1708.01967] Detección de noticias falsas en redes 
+sociales: una perspectiva de minería de datos 
+ 
+5.- Harris, S., Hadi, H. J., Ahmad, N., & Alshara, M. A. (2024). Fake news detection 
+revisited: An extensive review of theoretical frameworks, dataset assessments, 
+model constraints, and forward-looking research agendas. Technologies, 12(11), 
+222. MDPI. Recuperado de: Detección de noticias falsas revisada: Revisión 
+exhaustiva de marcos teóricos, evaluaciones de conjuntos de datos, restricciones de 
+modelos y agendas de investigación prospectivas | MDPI 
+ 
+6.- Microsoft. (2026). Copilot [Asistente de inteligencia artificial]. Microsoft. 
+https://copilot.microsoft.com 
+ 
+7.- Russell, S. J., & Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th 
+ed.). 
+https://api.pageplace.de/preview/DT0400.9781292401171_A41586057/preview-9781
+292401171_A41586057.pdf 
+ 
+ 
+18 
