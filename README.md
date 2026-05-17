@@ -109,4 +109,3 @@ python interfaz.py
 
 Este prototipo de sistema experto heurístico ha sido diseñado e implementado por:
 * **Jaime Ibarr4** - *Desarrollo de Backend, Reglas del Motor de Inferencia e Interfaz Gráfica.*
-* Desarrollado bajo la supervisión de la academia de **Inteligencia Artificial** de la **Universidad Autónoma de Chiapas**.
