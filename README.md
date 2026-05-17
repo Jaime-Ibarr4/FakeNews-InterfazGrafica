@@ -1,11 +1,5 @@
 # 🔍 Clasificador Inteligente de Fake News (Heuristic-Based Classifier)
-> **Proyecto Académico de Inteligencia Artificial (7° Semestre)**  
-> *Universidad Autónoma de Chiapas (UNACH) — Licenciatura en Sistemas Computacionales*
-
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![UNACH](https://img.shields.io/badge/UNACH-IA--7%C2%B0M-orange.svg)](https://www.unach.mx/)
-[![UI Style](https://img.shields.io/badge/UI-Dark%20Mode-1f232a.svg)](https://github.com/Jaime-Ibarr4/FakeNews-InterfazGrafica)
+> **Proyecto Académico de Inteligencia Artificial**  
 
 Este proyecto implementa un **Sistema Inteligente de Diagnóstico y Clasificación de Noticias Falsas (Fake News)** enfocado en el contexto del estado de Chiapas, México. El sistema integra técnicas de extracción automatizada de contenido (*Web Scraping*), representación del conocimiento mediante **Ontologías** y **Redes Semánticas**, y un **Motor de Inferencia Heurístico** que recorre un árbol de decisión para clasificar noticias con base en su probabilidad de veracidad.
 
